@@ -1,5 +1,3 @@
-
-
 const Header = () => {
     return (
         <header class="bg-gray-900">
@@ -19,13 +17,8 @@ const Header = () => {
             </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm/6 font-semibold text-white">Product</a>
-            <a href="#" class="text-sm/6 font-semibold text-white">Features</a>
-            <a href="#" class="text-sm/6 font-semibold text-white">Marketplace</a>
-            <a href="#" class="text-sm/6 font-semibold text-white">Company</a>
-            </div>
-            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+            <a href="#" class="text-sm/6 font-semibold text-white">About</a>
+            <a href="#" class="text-sm/6 font-semibold text-white">Projects</a>
             </div>
         </nav>
         {/* Mobile menu, show/hide based on menu open state. --> */}
@@ -48,13 +41,8 @@ const Header = () => {
             <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/25">
                 <div class="space-y-2 py-6">
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800">Product</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800">Features</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800">Marketplace</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800">Company</a>
-                </div>
-                <div class="py-6">
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800">Log in</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800">About</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800">Projects</a>
                 </div>
                 </div>
             </div>
