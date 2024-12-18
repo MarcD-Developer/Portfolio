@@ -160,84 +160,177 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="lg:pl-72">
-          <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
-            <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden">
-              <span className="sr-only">Open sidebar</span>
-              <Bars3Icon aria-hidden="true" className="size-6" />
-            </button>
+      <div className="lg:pl-72 bg-gray-800">
+        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4  px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+          <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden">
+            <span className="sr-only">Open sidebar</span>
+            <Bars3Icon aria-hidden="true" className="size-6" />
+          </button>
 
-            {/* Separator */}
-            <div aria-hidden="true" className="h-6 w-px bg-gray-900/10 lg:hidden" />
+          {/* Separator */}
+          {/*<div aria-hidden="true" className="h-6 w-px bg-gray-900/10 lg:hidden" />*/}
 
-            <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-              <form action="#" method="GET" className="grid flex-1 grid-cols-1">
-                <input
-                  name="search"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  className="col-start-1 row-start-1 block size-full bg-white pl-8 text-base text-gray-900 outline-none placeholder:text-gray-400 sm:text-sm/6"
-                />
-              </form>
-              <div className="flex items-center gap-x-4 lg:gap-x-6">
+          <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 ">
+            <div className="flex items-center gap-x-4 lg:gap-x-6">
 
-                {/* Separator */}
-                {/*<div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10" /> */}
+              {/* Separator */}
+              {/*<div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10" /> */}
 
-               
-              </div>
+
             </div>
           </div>
-
-          <main className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8">
-            <ul class="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
-      <li>
-        Nice to meet you! I'm a software developer that's passionate about
-        designing and developing usable working solutions for use by clients. I
-        have experience working on Microservices that are both scalable and
-        quickly deployable. I have worked in the cloud for some time and have
-        worked on utilizing AWS services such as S3, ECS, EC2 and Fargate. I
-        have also worked on the front end using React and Vue to create a
-        seamless user experience. Currently I'm working at Capital One as a
-        Senior Software Engineer fulfilling their mission of changing banking
-        for good. My main languages are Java and Python
-      </li>
-
-      <li>Senior Software Engineer</li>
-      <li>Capital One</li>
-      <li>
-        Led the end-to-end development of cloud-native applications, delivering
-        scalable and resilient solutions leveraging AWS ECS and Docker.
-        Specialized in building and maintaining RESTful APIs using Java Spring
-        Boot, seamlessly integrating microservices across distributed systems
-        while utilizing Jenkins to ensure streamlined CI/CD workflows. Crafted
-        responsive user interfaces via React and Vue while also using
-        PostgresSQL databases via AWS RDS for high availability.
-      </li>
-
-      <li>Full-Stack Software Engineer</li>
-      <li>Revature</li>
-      <li>
-        Contributed to the migration of on-premise applications to Azure Cloud,
-        enhancing scalability and performance for government platforms. Designed
-        and implemented RESTful APIs using Spring and .NET, while modernizing
-        legacy components with updated Java tech stacks to improve security and
-        efficiency. Developed deployment assets for release management teams and
-        provided guidance for application builds in both test and production
-        environments. Leveraged Hibernate in Spring to streamline database
-        interactions and created database assets such as stored procedures,
-        views, and native queries within SQL Server Management Studio. Built
-        responsive single-page applications using AngularJS and Angular,
-        improving internal web functionalities for federal clients.
-        Additionally, supported the transition from Waterfall to Agile
-        methodologies, optimizing project delivery and client satisfaction.
-      </li>
-      </ul>
-            </div>
-          </main>
         </div>
+        <div className="bg-gray-800">
+        <main className="py-10">
+          <div className="px-4 sm:px-6 lg:px-8">
+            <ul className="">
+              <li className="flex justify-between gap-x-6 py-5">
+                Nice to meet you! I'm a software developer that's passionate about
+                designing and developing usable working solutions for use by clients. I
+                have experience working on Microservices that are both scalable and
+                quickly deployable. I have worked in the cloud for some time and have
+                worked on utilizing AWS services such as S3, ECS, EC2 and Fargate. I
+                have also worked on the front end using React and Vue to create a
+                seamless user experience. Currently I'm working at Capital One as a
+                Senior Software Engineer fulfilling their mission of changing banking
+                for good. My main languages are Java and Python
+              </li>
+              <div>
+                <li className="font-semibold text-xl/5 text-gray-900">Senior Software Engineer</li>
+                <li className="mt-1 truncate  text-gray-500">Capital One</li>
+              </div>
+              <li className="flex justify-between gap-x-6 py-5">
+
+                Led the end-to-end development of cloud-native applications, delivering
+                scalable and resilient solutions leveraging AWS ECS and Docker.
+                Specialized in building and maintaining RESTful APIs using Java Spring
+                Boot, seamlessly integrating microservices across distributed systems
+                while utilizing Jenkins to ensure streamlined CI/CD workflows. Crafted
+                responsive user interfaces via React and Vue while also using
+                PostgresSQL databases via AWS RDS for high availability.
+              </li>
+
+
+              <div>
+                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
+                <li className="mt-1 truncate  text-gray-500">Revature</li>
+              </div>
+              <li className="flex justify-between gap-x-6 py-5">
+                Contributed to the migration of on-premise applications to Azure Cloud,
+                enhancing scalability and performance for government platforms. Designed
+                and implemented RESTful APIs using Spring and .NET, while modernizing
+                legacy components with updated Java tech stacks to improve security and
+                efficiency. Developed deployment assets for release management teams and
+                provided guidance for application builds in both test and production
+                environments. Leveraged Hibernate in Spring to streamline database
+                interactions and created database assets such as stored procedures,
+                views, and native queries within SQL Server Management Studio. Built
+                responsive single-page applications using AngularJS and Angular,
+                improving internal web functionalities for federal clients.
+                Additionally, supported the transition from Waterfall to Agile
+                methodologies, optimizing project delivery and client satisfaction.
+              </li>
+              <div>
+                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
+                <li className="mt-1 truncate  text-gray-500">Revature</li>
+              </div>
+              <li className="flex justify-between gap-x-6 py-5">
+                Contributed to the migration of on-premise applications to Azure Cloud,
+                enhancing scalability and performance for government platforms. Designed
+                and implemented RESTful APIs using Spring and .NET, while modernizing
+                legacy components with updated Java tech stacks to improve security and
+                efficiency. Developed deployment assets for release management teams and
+                provided guidance for application builds in both test and production
+                environments. Leveraged Hibernate in Spring to streamline database
+                interactions and created database assets such as stored procedures,
+                views, and native queries within SQL Server Management Studio. Built
+                responsive single-page applications using AngularJS and Angular,
+                improving internal web functionalities for federal clients.
+                Additionally, supported the transition from Waterfall to Agile
+                methodologies, optimizing project delivery and client satisfaction.
+              </li>
+              <div>
+                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
+                <li className="mt-1 truncate  text-gray-500">Revature</li>
+              </div>
+              <li className="flex justify-between gap-x-6 py-5">
+                Contributed to the migration of on-premise applications to Azure Cloud,
+                enhancing scalability and performance for government platforms. Designed
+                and implemented RESTful APIs using Spring and .NET, while modernizing
+                legacy components with updated Java tech stacks to improve security and
+                efficiency. Developed deployment assets for release management teams and
+                provided guidance for application builds in both test and production
+                environments. Leveraged Hibernate in Spring to streamline database
+                interactions and created database assets such as stored procedures,
+                views, and native queries within SQL Server Management Studio. Built
+                responsive single-page applications using AngularJS and Angular,
+                improving internal web functionalities for federal clients.
+                Additionally, supported the transition from Waterfall to Agile
+                methodologies, optimizing project delivery and client satisfaction.
+              </li>
+              <div>
+                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
+                <li className="mt-1 truncate  text-gray-500">Revature</li>
+              </div>
+              <li className="flex justify-between gap-x-6 py-5">
+                Contributed to the migration of on-premise applications to Azure Cloud,
+                enhancing scalability and performance for government platforms. Designed
+                and implemented RESTful APIs using Spring and .NET, while modernizing
+                legacy components with updated Java tech stacks to improve security and
+                efficiency. Developed deployment assets for release management teams and
+                provided guidance for application builds in both test and production
+                environments. Leveraged Hibernate in Spring to streamline database
+                interactions and created database assets such as stored procedures,
+                views, and native queries within SQL Server Management Studio. Built
+                responsive single-page applications using AngularJS and Angular,
+                improving internal web functionalities for federal clients.
+                Additionally, supported the transition from Waterfall to Agile
+                methodologies, optimizing project delivery and client satisfaction.
+              </li>
+              <div>
+                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
+                <li className="mt-1 truncate  text-gray-500">Revature</li>
+              </div>
+              <li className="flex justify-between gap-x-6 py-5">
+                Contributed to the migration of on-premise applications to Azure Cloud,
+                enhancing scalability and performance for government platforms. Designed
+                and implemented RESTful APIs using Spring and .NET, while modernizing
+                legacy components with updated Java tech stacks to improve security and
+                efficiency. Developed deployment assets for release management teams and
+                provided guidance for application builds in both test and production
+                environments. Leveraged Hibernate in Spring to streamline database
+                interactions and created database assets such as stored procedures,
+                views, and native queries within SQL Server Management Studio. Built
+                responsive single-page applications using AngularJS and Angular,
+                improving internal web functionalities for federal clients.
+                Additionally, supported the transition from Waterfall to Agile
+                methodologies, optimizing project delivery and client satisfaction.
+              </li>
+              <div>
+                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
+                <li className="mt-1 truncate  text-gray-500">Revature</li>
+              </div>
+              <li className="flex justify-between gap-x-6 py-5">
+                Contributed to the migration of on-premise applications to Azure Cloud,
+                enhancing scalability and performance for government platforms. Designed
+                and implemented RESTful APIs using Spring and .NET, while modernizing
+                legacy components with updated Java tech stacks to improve security and
+                efficiency. Developed deployment assets for release management teams and
+                provided guidance for application builds in both test and production
+                environments. Leveraged Hibernate in Spring to streamline database
+                interactions and created database assets such as stored procedures,
+                views, and native queries within SQL Server Management Studio. Built
+                responsive single-page applications using AngularJS and Angular,
+                improving internal web functionalities for federal clients.
+                Additionally, supported the transition from Waterfall to Agile
+                methodologies, optimizing project delivery and client satisfaction.
+              </li>
+            </ul>
+            
+          </div>
+        </main>
+        </div>
+      </div>
     </>
   );
 };
