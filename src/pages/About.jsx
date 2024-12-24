@@ -1,33 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import "../output.css";
-import {
-  ChevronDownIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/20/solid";
-
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  TransitionChild,
-} from "@headlessui/react";
 
 import {
   Bars3Icon,
-  BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
-  Cog6ToothIcon,
   DocumentDuplicateIcon,
-  FolderIcon,
   HomeIcon,
   UsersIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/outline";
 
 const navigation = [
@@ -71,7 +50,7 @@ const socialMedia = [
 
 
 export default function About() {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [setSidebarOpen] = useState(false);
     return (
       <>
         {/* Static sidebar for desktop */}

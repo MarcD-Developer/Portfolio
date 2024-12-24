@@ -1,33 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import "../output.css";
-import {
-  ChevronDownIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/20/solid";
-
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  TransitionChild,
-} from "@headlessui/react";
 
 import {
   Bars3Icon,
-  BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
-  Cog6ToothIcon,
   DocumentDuplicateIcon,
-  FolderIcon,
   HomeIcon,
   UsersIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/outline";
 
 const navigation = [
@@ -39,10 +18,6 @@ const navigation = [
     icon: DocumentDuplicateIcon,
     current: false,
   },
-];
-const userNavigation = [
-  { name: "Your profile", href: "#" },
-  { name: "Sign out", href: "#" },
 ];
 
 const socialMedia = [
@@ -79,7 +54,7 @@ function classNames(...classes) {
 }
 
 export default function Home() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [setSidebarOpen] = useState(false);
   return (
     <>
       {/* Static sidebar for desktop */}
@@ -101,9 +76,9 @@ export default function Home() {
             </ul>
           </div>
           <nav className="flex flex-1 flex-col">
-            <ul role="list" className="flex flex-1 flex-col gap-y-7">
+            <ul className="flex flex-1 flex-col gap-y-7">
               <li>
-                <ul role="list" className="-mx-2 space-y-1">
+                <ul className="-mx-2 space-y-1">
                   {navigation.map((item) => (
                     <li key={item.name}>
                       <a
