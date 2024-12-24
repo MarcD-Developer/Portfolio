@@ -1,9 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Section from "../components/Section";
-import Header from "./Header";
-import JobDescription from "./JobDescriptions";
-import Footer from "./Footer";
 import "../output.css";
 import {
   ChevronDownIcon,
@@ -36,16 +32,14 @@ import {
 
 const navigation = [
   { name: "Work", href: "#", icon: HomeIcon, current: true },
-  { name: "About Me", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Resume", href: "https://drive.google.com/file/d/1bgrS8xfV5URimU6wst4ukqTqaN_MWpZk/view?usp=sharing", icon: DocumentDuplicateIcon, current: false },
+  { name: "About Me", href: "about", icon: UsersIcon, current: false },
+  {
+    name: "Resume",
+    href: "https://drive.google.com/file/d/1bgrS8xfV5URimU6wst4ukqTqaN_MWpZk/view?usp=sharing",
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
 ];
-const teams = [
-  { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
-  { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
-  { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
-];
-
 const userNavigation = [
   { name: "Your profile", href: "#" },
   { name: "Sign out", href: "#" },
@@ -54,7 +48,7 @@ const userNavigation = [
 const socialMedia = [
   {
     name: "GitHub",
-    href: "#",
+    href: "https://github.com/MarcD-Developer",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -67,7 +61,7 @@ const socialMedia = [
   },
   {
     name: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/marc-angelo-dilinila-027258115/",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -95,7 +89,7 @@ export default function Home() {
           <div className="flex h-16 shrink-0 items-center">
             <ul className="-mx-2 mt-2">
               <li>
-                <h1 className="text-gray-400 hover:bg-gray-800 hover:text-white group flex gap-x-3 rounded-md p-2 text-m/6 font-semibold mt-4">
+                <h1 className="text-gray-400 flex gap-x-3 rounded-md p-2 text-xl font-semibold mt-4">
                   Marc Angelo Dilinila
                 </h1>
               </li>
@@ -131,31 +125,6 @@ export default function Home() {
                   ))}
                 </ul>
               </li>
-              <li>
-                <div className="text-xs/6 font-semibold text-gray-400">
-                  Your teams
-                </div>
-                <ul role="list" className="-mx-2 mt-2 space-y-1">
-                  {teams.map((team) => (
-                    <li key={team.name}>
-                      <a
-                        href={team.href}
-                        className={classNames(
-                          team.current
-                            ? "bg-gray-800 text-white"
-                            : "text-gray-400 hover:bg-gray-800 hover:text-white",
-                          "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
-                        )}
-                      >
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">
-                          {team.initial}
-                        </span>
-                        <span className="truncate">{team.name}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
               <li className="-mx-6 mt-auto mb-10">
                 <div className="flex justify-center gap-x-6 md:order-2">
                   {socialMedia.map((item) => (
@@ -163,6 +132,8 @@ export default function Home() {
                       key={item.name}
                       href={item.href}
                       className="text-gray-400 hover:text-gray-300"
+                      target="_blank" 
+                      rel="noopener noreferrer"
                     >
                       <span className="sr-only">{item.name}</span>
                       <item.icon aria-hidden="true" className="size-6" />
@@ -218,134 +189,147 @@ export default function Home() {
                     Python{" "}
                   </p>
                 </li>
-                <div>
                 <li className="font-semibold text-3xl text-gray-300 mb-8">
-                    Experience
-                  </li>
-                  <li className="font-semibold text-xl/5 text-gray-300">
-                    Senior Software Engineer
-                  </li>
-                  <li className="mt-1 truncate  text-gray-400">Capital One</li>
-                  <ul
-                    class="mt-2 flex flex-wrap"
-                    aria-label="Technologies used"
-                  >
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Java
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        AWS
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        PostgresSQL
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Spring Boot
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        React
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Docker
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Kafka
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <li className="flex justify-between gap-x-6 py-5">
-                  <p className="text-gray-200">
-                    Led the end-to-end development of cloud-native applications,
-                    delivering scalable and resilient solutions leveraging AWS
-                    ECS and Docker. Specialized in building and maintaining
-                    RESTful APIs using Java Spring Boot, seamlessly integrating
-                    microservices across distributed systems while utilizing
-                    Jenkins to ensure streamlined CI/CD workflows. Crafted
-                    responsive user interfaces via React and Vue while also
-                    using PostgresSQL databases via AWS RDS for high
-                    availability.
-                  </p>
+                  Experience
                 </li>
+                <div className="relative rounded-lg border border-gray-800 bg-gray-800 px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-700 hover:bg-gray-700">
+                  <a href="https://www.capitalone.com/about/" target="_blank" rel="noopener noreferrer">
+                    <div>
+                      <li className="font-semibold text-xl/5 text-gray-300">
+                        Senior Software Engineer
+                      </li>
+                      <li className="mt-1 truncate  text-gray-400">
+                        Capital One
+                      </li>
+                      <ul
+                        class="mt-2 flex flex-wrap"
+                        aria-label="Technologies used"
+                      >
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            Java
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            AWS
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            PostgresSQL
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            Spring Boot
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            React
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            Docker
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            Kafka
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
 
-                <div>
-                  <li className="font-semibold text-xl/5 text-gray-300">
-                    Full-Stack Software Engineer
-                  </li>
-                  <li className="mt-1 truncate  text-gray-400">Revature</li>
+                    <li className="flex justify-between gap-x-6 py-5">
+                      <p className="text-gray-200">
+                        Led the end-to-end development of cloud-native
+                        applications, delivering scalable and resilient
+                        solutions leveraging AWS ECS and Docker. Specialized in
+                        building and maintaining RESTful APIs using Java Spring
+                        Boot, seamlessly integrating microservices across
+                        distributed systems while utilizing Jenkins to ensure
+                        streamlined CI/CD workflows. Crafted responsive user
+                        interfaces via React and Vue while also using
+                        PostgresSQL databases via AWS RDS for high availability.
+                      </p>
+                    </li>
+                  </a>
                 </div>
-                <ul
-                    class="mt-2 flex flex-wrap"
-                    aria-label="Technologies used"
-                  >
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        C#
-                      </div>
+                <div className="relative rounded-lg border border-gray-800 bg-gray-800 px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-700 hover:bg-gray-700">
+                  <a href="https://www.revature.com/partners" target="_blank" rel="noopener noreferrer">
+                    <div>
+                      <li className="font-semibold text-xl/5 text-gray-300">
+                        Full-Stack Software Engineer
+                      </li>
+                      <li className="mt-1 truncate  text-gray-400">Revature</li>
+                    </div>
+                    <ul
+                      class="mt-2 flex flex-wrap"
+                      aria-label="Technologies used"
+                    >
+                      <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                          C#
+                        </div>
+                      </li>
+                      <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                          .NET
+                        </div>
+                      </li>
+                      <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                          Azure
+                        </div>
+                      </li>
+                      <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                          Jenkins
+                        </div>
+                      </li>
+                      <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                          Angular
+                        </div>
+                      </li>
+                      <li class="mr-1.5 mt-2">
+                        <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                          Agile
+                        </div>
+                      </li>
+                    </ul>
+                    <li className="flex justify-between gap-x-6 py-5">
+                      <p className="text-gray-200">
+                        Contributed to the migration of on-premise applications
+                        to Azure Cloud, enhancing scalability and performance
+                        for government platforms. Designed and implemented
+                        RESTful APIs using Spring and .NET, while modernizing
+                        legacy components with updated Java tech stacks to
+                        improve security and efficiency. Developed deployment
+                        assets for release management teams and provided
+                        guidance for application builds in both test and
+                        production environments. Leveraged Hibernate in Spring
+                        to streamline database interactions and created database
+                        assets such as stored procedures, views, and native
+                        queries within SQL Server Management Studio. Built
+                        responsive single-page applications using AngularJS and
+                        Angular, improving internal web functionalities for
+                        federal clients. Additionally, supported the transition
+                        from Waterfall to Agile methodologies, optimizing
+                        project delivery and client satisfaction.
+                      </p>
                     </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        .NET
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Azure
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Jenkins
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Angular
-                      </div>
-                    </li>
-                    <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                        Agile
-                      </div>
-                    </li>
-                  </ul>
-                <li className="flex justify-between gap-x-6 py-5">
-                  <p className="text-gray-200">
-                    Contributed to the migration of on-premise applications to
-                    Azure Cloud, enhancing scalability and performance for
-                    government platforms. Designed and implemented RESTful APIs
-                    using Spring and .NET, while modernizing legacy components
-                    with updated Java tech stacks to improve security and
-                    efficiency. Developed deployment assets for release
-                    management teams and provided guidance for application
-                    builds in both test and production environments. Leveraged
-                    Hibernate in Spring to streamline database interactions and
-                    created database assets such as stored procedures, views,
-                    and native queries within SQL Server Management Studio.
-                    Built responsive single-page applications using AngularJS
-                    and Angular, improving internal web functionalities for
-                    federal clients. Additionally, supported the transition from
-                    Waterfall to Agile methodologies, optimizing project
-                    delivery and client satisfaction.
-                  </p>
-                </li> 
+                  </a>
+                </div>
               </ul>
               <div>
-                <p className="text-xs/6 text-gray-400">Developed in Visual Studio Code. Built with React.js and Tailwind.css components.  
-                  Delivered by Netlify, that offers hosting of static sites for free. Code is available on GitHub.
+                <p className="text-xs/6 text-gray-400">
+                  Developed in Visual Studio Code. Built with React.js and
+                  Tailwind.css components. Delivered by Netlify, that offers
+                  hosting of static sites for free. Code is available on GitHub.
                 </p>
               </div>
             </div>
