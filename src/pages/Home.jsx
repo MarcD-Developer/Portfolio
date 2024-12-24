@@ -38,7 +38,7 @@ const navigation = [
   { name: "Work", href: "#", icon: HomeIcon, current: true },
   { name: "About Me", href: "#", icon: UsersIcon, current: false },
   { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Resume", href: "#", icon: DocumentDuplicateIcon, current: false },
+  { name: "Resume", href: "https://drive.google.com/file/d/1bgrS8xfV5URimU6wst4ukqTqaN_MWpZk/view?usp=sharing", icon: DocumentDuplicateIcon, current: false },
 ];
 const teams = [
   { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
@@ -156,7 +156,7 @@ export default function Home() {
                   ))}
                 </ul>
               </li>
-              <li className="-mx-6 mt-auto mb-2">
+              <li className="-mx-6 mt-auto mb-10">
                 <div className="flex justify-center gap-x-6 md:order-2">
                   {socialMedia.map((item) => (
                     <a
@@ -344,7 +344,7 @@ export default function Home() {
                 </li> 
               </ul>
               <div>
-                <p className="text-gray-400">Developed in Visual Studio Code. Built with React.js and Tailwind.css components.  
+                <p className="text-xs/6 text-gray-400">Developed in Visual Studio Code. Built with React.js and Tailwind.css components.  
                   Delivered by Netlify, that offers hosting of static sites for free. Code is available on GitHub.
                 </p>
               </div>
