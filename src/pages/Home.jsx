@@ -1,11 +1,14 @@
 import React from "react";
-import { useState } from 'react'
+import { useState } from "react";
 import Section from "../components/Section";
 import Header from "./Header";
 import JobDescription from "./JobDescriptions";
 import Footer from "./Footer";
-import '../output.css';
-import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import "../output.css";
+import {
+  ChevronDownIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/20/solid";
 
 import {
   Dialog,
@@ -16,7 +19,7 @@ import {
   MenuItem,
   MenuItems,
   TransitionChild,
-} from '@headlessui/react'
+} from "@headlessui/react";
 
 import {
   Bars3Icon,
@@ -29,29 +32,29 @@ import {
   HomeIcon,
   UsersIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
+} from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: 'Work', href: '#', icon: HomeIcon, current: true },
-  { name: 'About Me', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Resume', href: '#', icon: DocumentDuplicateIcon, current: false },
-]
+  { name: "Work", href: "#", icon: HomeIcon, current: true },
+  { name: "About Me", href: "#", icon: UsersIcon, current: false },
+  { name: "Projects", href: "#", icon: FolderIcon, current: false },
+  { name: "Resume", href: "#", icon: DocumentDuplicateIcon, current: false },
+];
 const teams = [
-  { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-  { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-  { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
-]
+  { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
+  { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
+  { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
+];
 
 const userNavigation = [
-  { name: 'Your profile', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
+  { name: "Your profile", href: "#" },
+  { name: "Sign out", href: "#" },
+];
 
 const socialMedia = [
   {
-    name: 'GitHub',
-    href: '#',
+    name: "GitHub",
+    href: "#",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -63,8 +66,8 @@ const socialMedia = [
     ),
   },
   {
-    name: 'LinkedIn',
-    href: '#',
+    name: "LinkedIn",
+    href: "#",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -75,14 +78,14 @@ const socialMedia = [
       </svg>
     ),
   },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Home() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
       {/* Static sidebar for desktop */}
@@ -90,15 +93,18 @@ export default function Home() {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
           <div className="flex h-16 shrink-0 items-center">
-            <ul className="-mx-2 mt-2 space-y-1">
+            <ul className="-mx-2 mt-2">
               <li>
-                <h1 className="text-gray-400 hover:bg-gray-800 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold">Marc Angelo Dilinila</h1>
+                <h1 className="text-gray-400 hover:bg-gray-800 hover:text-white group flex gap-x-3 rounded-md p-2 text-m/6 font-semibold mt-4">
+                  Marc Angelo Dilinila
+                </h1>
               </li>
               <li>
-                <p className="text-gray-400 group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold">Senior Software Engineer</p>
+                <p className="text-gray-400 group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold">
+                  Senior Software Engineer
+                </p>
               </li>
             </ul>
-
           </div>
           <nav className="flex flex-1 flex-col">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -110,12 +116,15 @@ export default function Home() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? 'bg-gray-800 text-white'
-                            : 'text-gray-400 hover:bg-gray-800 hover:text-white',
-                          'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold',
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-400 hover:bg-gray-800 hover:text-white",
+                          "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
                         )}
                       >
-                        <item.icon aria-hidden="true" className="size-6 shrink-0" />
+                        <item.icon
+                          aria-hidden="true"
+                          className="size-6 shrink-0"
+                        />
                         {item.name}
                       </a>
                     </li>
@@ -123,7 +132,9 @@ export default function Home() {
                 </ul>
               </li>
               <li>
-                <div className="text-xs/6 font-semibold text-gray-400">Your teams</div>
+                <div className="text-xs/6 font-semibold text-gray-400">
+                  Your teams
+                </div>
                 <ul role="list" className="-mx-2 mt-2 space-y-1">
                   {teams.map((team) => (
                     <li key={team.name}>
@@ -131,9 +142,9 @@ export default function Home() {
                         href={team.href}
                         className={classNames(
                           team.current
-                            ? 'bg-gray-800 text-white'
-                            : 'text-gray-400 hover:bg-gray-800 hover:text-white',
-                          'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold',
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-400 hover:bg-gray-800 hover:text-white",
+                          "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
                         )}
                       >
                         <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">
@@ -145,10 +156,14 @@ export default function Home() {
                   ))}
                 </ul>
               </li>
-              <li className="-mx-6 mt-auto">
+              <li className="-mx-6 mt-auto mb-2">
                 <div className="flex justify-center gap-x-6 md:order-2">
                   {socialMedia.map((item) => (
-                    <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-gray-400 hover:text-gray-300"
+                    >
                       <span className="sr-only">{item.name}</span>
                       <item.icon aria-hidden="true" className="size-6" />
                     </a>
@@ -162,7 +177,11 @@ export default function Home() {
 
       <div className="lg:pl-72 bg-gray-800">
         <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4  px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
-          <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden">
+          <button
+            type="button"
+            onClick={() => setSidebarOpen(true)}
+            className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+          >
             <span className="sr-only">Open sidebar</span>
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
@@ -172,165 +191,167 @@ export default function Home() {
 
           <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 ">
             <div className="flex items-center gap-x-4 lg:gap-x-6">
-
               {/* Separator */}
               {/*<div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10" /> */}
-
-
             </div>
           </div>
         </div>
         <div className="bg-gray-800">
-        <main className="py-10">
-          <div className="px-4 sm:px-6 lg:px-8">
-            <ul className="">
-              <li className="flex justify-between gap-x-6 py-5">
-                Nice to meet you! I'm a software developer that's passionate about
-                designing and developing usable working solutions for use by clients. I
-                have experience working on Microservices that are both scalable and
-                quickly deployable. I have worked in the cloud for some time and have
-                worked on utilizing AWS services such as S3, ECS, EC2 and Fargate. I
-                have also worked on the front end using React and Vue to create a
-                seamless user experience. Currently I'm working at Capital One as a
-                Senior Software Engineer fulfilling their mission of changing banking
-                for good. My main languages are Java and Python
-              </li>
-              <div>
-                <li className="font-semibold text-xl/5 text-gray-900">Senior Software Engineer</li>
-                <li className="mt-1 truncate  text-gray-500">Capital One</li>
-              </div>
-              <li className="flex justify-between gap-x-6 py-5">
+          <main className="py-10">
+            <div className="px-4 sm:px-6 lg:px-8">
+              <ul className="">
+                <li className="font-semibold text-3xl text-gray-200">
+                  Hi there! I'm Marc.
+                </li>
+                <li className="flex justify-between gap-x-6 py-5 mt-4 mb-20">
+                  <p className="text-gray-200">
+                    Nice to meet you! I'm a software developer that's passionate
+                    about designing and developing usable working solutions for
+                    use by clients. I have experience working on Microservices
+                    that are both scalable and quickly deployable. I have worked
+                    in the cloud for some time and have worked on utilizing AWS
+                    services such as S3, ECS, EC2 and Fargate. I have also
+                    worked on the front end using React and Vue to create a
+                    seamless user experience. Currently I'm working at Capital
+                    One as a Senior Software Engineer fulfilling their mission
+                    of changing banking for good. My main languages are Java and
+                    Python{" "}
+                  </p>
+                </li>
+                <div>
+                <li className="font-semibold text-3xl text-gray-300 mb-8">
+                    Experience
+                  </li>
+                  <li className="font-semibold text-xl/5 text-gray-300">
+                    Senior Software Engineer
+                  </li>
+                  <li className="mt-1 truncate  text-gray-400">Capital One</li>
+                  <ul
+                    class="mt-2 flex flex-wrap"
+                    aria-label="Technologies used"
+                  >
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Java
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        AWS
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        PostgresSQL
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Spring Boot
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        React
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Docker
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Kafka
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <li className="flex justify-between gap-x-6 py-5">
+                  <p className="text-gray-200">
+                    Led the end-to-end development of cloud-native applications,
+                    delivering scalable and resilient solutions leveraging AWS
+                    ECS and Docker. Specialized in building and maintaining
+                    RESTful APIs using Java Spring Boot, seamlessly integrating
+                    microservices across distributed systems while utilizing
+                    Jenkins to ensure streamlined CI/CD workflows. Crafted
+                    responsive user interfaces via React and Vue while also
+                    using PostgresSQL databases via AWS RDS for high
+                    availability.
+                  </p>
+                </li>
 
-                Led the end-to-end development of cloud-native applications, delivering
-                scalable and resilient solutions leveraging AWS ECS and Docker.
-                Specialized in building and maintaining RESTful APIs using Java Spring
-                Boot, seamlessly integrating microservices across distributed systems
-                while utilizing Jenkins to ensure streamlined CI/CD workflows. Crafted
-                responsive user interfaces via React and Vue while also using
-                PostgresSQL databases via AWS RDS for high availability.
-              </li>
-
-
+                <div>
+                  <li className="font-semibold text-xl/5 text-gray-300">
+                    Full-Stack Software Engineer
+                  </li>
+                  <li className="mt-1 truncate  text-gray-400">Revature</li>
+                </div>
+                <ul
+                    class="mt-2 flex flex-wrap"
+                    aria-label="Technologies used"
+                  >
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        C#
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        .NET
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Azure
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Jenkins
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Angular
+                      </div>
+                    </li>
+                    <li class="mr-1.5 mt-2">
+                      <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                        Agile
+                      </div>
+                    </li>
+                  </ul>
+                <li className="flex justify-between gap-x-6 py-5">
+                  <p className="text-gray-200">
+                    Contributed to the migration of on-premise applications to
+                    Azure Cloud, enhancing scalability and performance for
+                    government platforms. Designed and implemented RESTful APIs
+                    using Spring and .NET, while modernizing legacy components
+                    with updated Java tech stacks to improve security and
+                    efficiency. Developed deployment assets for release
+                    management teams and provided guidance for application
+                    builds in both test and production environments. Leveraged
+                    Hibernate in Spring to streamline database interactions and
+                    created database assets such as stored procedures, views,
+                    and native queries within SQL Server Management Studio.
+                    Built responsive single-page applications using AngularJS
+                    and Angular, improving internal web functionalities for
+                    federal clients. Additionally, supported the transition from
+                    Waterfall to Agile methodologies, optimizing project
+                    delivery and client satisfaction.
+                  </p>
+                </li> 
+              </ul>
               <div>
-                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
-                <li className="mt-1 truncate  text-gray-500">Revature</li>
+                <p className="text-gray-400">Developed in Visual Studio Code. Built with React.js and Tailwind.css components.  
+                  Delivered by Netlify, that offers hosting of static sites for free. Code is available on GitHub.
+                </p>
               </div>
-              <li className="flex justify-between gap-x-6 py-5">
-                Contributed to the migration of on-premise applications to Azure Cloud,
-                enhancing scalability and performance for government platforms. Designed
-                and implemented RESTful APIs using Spring and .NET, while modernizing
-                legacy components with updated Java tech stacks to improve security and
-                efficiency. Developed deployment assets for release management teams and
-                provided guidance for application builds in both test and production
-                environments. Leveraged Hibernate in Spring to streamline database
-                interactions and created database assets such as stored procedures,
-                views, and native queries within SQL Server Management Studio. Built
-                responsive single-page applications using AngularJS and Angular,
-                improving internal web functionalities for federal clients.
-                Additionally, supported the transition from Waterfall to Agile
-                methodologies, optimizing project delivery and client satisfaction.
-              </li>
-              <div>
-                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
-                <li className="mt-1 truncate  text-gray-500">Revature</li>
-              </div>
-              <li className="flex justify-between gap-x-6 py-5">
-                Contributed to the migration of on-premise applications to Azure Cloud,
-                enhancing scalability and performance for government platforms. Designed
-                and implemented RESTful APIs using Spring and .NET, while modernizing
-                legacy components with updated Java tech stacks to improve security and
-                efficiency. Developed deployment assets for release management teams and
-                provided guidance for application builds in both test and production
-                environments. Leveraged Hibernate in Spring to streamline database
-                interactions and created database assets such as stored procedures,
-                views, and native queries within SQL Server Management Studio. Built
-                responsive single-page applications using AngularJS and Angular,
-                improving internal web functionalities for federal clients.
-                Additionally, supported the transition from Waterfall to Agile
-                methodologies, optimizing project delivery and client satisfaction.
-              </li>
-              <div>
-                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
-                <li className="mt-1 truncate  text-gray-500">Revature</li>
-              </div>
-              <li className="flex justify-between gap-x-6 py-5">
-                Contributed to the migration of on-premise applications to Azure Cloud,
-                enhancing scalability and performance for government platforms. Designed
-                and implemented RESTful APIs using Spring and .NET, while modernizing
-                legacy components with updated Java tech stacks to improve security and
-                efficiency. Developed deployment assets for release management teams and
-                provided guidance for application builds in both test and production
-                environments. Leveraged Hibernate in Spring to streamline database
-                interactions and created database assets such as stored procedures,
-                views, and native queries within SQL Server Management Studio. Built
-                responsive single-page applications using AngularJS and Angular,
-                improving internal web functionalities for federal clients.
-                Additionally, supported the transition from Waterfall to Agile
-                methodologies, optimizing project delivery and client satisfaction.
-              </li>
-              <div>
-                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
-                <li className="mt-1 truncate  text-gray-500">Revature</li>
-              </div>
-              <li className="flex justify-between gap-x-6 py-5">
-                Contributed to the migration of on-premise applications to Azure Cloud,
-                enhancing scalability and performance for government platforms. Designed
-                and implemented RESTful APIs using Spring and .NET, while modernizing
-                legacy components with updated Java tech stacks to improve security and
-                efficiency. Developed deployment assets for release management teams and
-                provided guidance for application builds in both test and production
-                environments. Leveraged Hibernate in Spring to streamline database
-                interactions and created database assets such as stored procedures,
-                views, and native queries within SQL Server Management Studio. Built
-                responsive single-page applications using AngularJS and Angular,
-                improving internal web functionalities for federal clients.
-                Additionally, supported the transition from Waterfall to Agile
-                methodologies, optimizing project delivery and client satisfaction.
-              </li>
-              <div>
-                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
-                <li className="mt-1 truncate  text-gray-500">Revature</li>
-              </div>
-              <li className="flex justify-between gap-x-6 py-5">
-                Contributed to the migration of on-premise applications to Azure Cloud,
-                enhancing scalability and performance for government platforms. Designed
-                and implemented RESTful APIs using Spring and .NET, while modernizing
-                legacy components with updated Java tech stacks to improve security and
-                efficiency. Developed deployment assets for release management teams and
-                provided guidance for application builds in both test and production
-                environments. Leveraged Hibernate in Spring to streamline database
-                interactions and created database assets such as stored procedures,
-                views, and native queries within SQL Server Management Studio. Built
-                responsive single-page applications using AngularJS and Angular,
-                improving internal web functionalities for federal clients.
-                Additionally, supported the transition from Waterfall to Agile
-                methodologies, optimizing project delivery and client satisfaction.
-              </li>
-              <div>
-                <li className="font-semibold text-xl/5 text-gray-900">Full-Stack Software Engineer</li>
-                <li className="mt-1 truncate  text-gray-500">Revature</li>
-              </div>
-              <li className="flex justify-between gap-x-6 py-5">
-                Contributed to the migration of on-premise applications to Azure Cloud,
-                enhancing scalability and performance for government platforms. Designed
-                and implemented RESTful APIs using Spring and .NET, while modernizing
-                legacy components with updated Java tech stacks to improve security and
-                efficiency. Developed deployment assets for release management teams and
-                provided guidance for application builds in both test and production
-                environments. Leveraged Hibernate in Spring to streamline database
-                interactions and created database assets such as stored procedures,
-                views, and native queries within SQL Server Management Studio. Built
-                responsive single-page applications using AngularJS and Angular,
-                improving internal web functionalities for federal clients.
-                Additionally, supported the transition from Waterfall to Agile
-                methodologies, optimizing project delivery and client satisfaction.
-              </li>
-            </ul>
-            
-          </div>
-        </main>
+            </div>
+          </main>
         </div>
       </div>
     </>
   );
-};
+}
