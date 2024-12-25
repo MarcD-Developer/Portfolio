@@ -173,9 +173,9 @@ export default function About() {
             </ul>
           </div>
           <nav className="flex flex-1 flex-col">
-            <ul role="list" className="flex flex-1 flex-col gap-y-7">
+            <ul className="flex flex-1 flex-col gap-y-7">
               <li>
-                <ul role="list" className="-mx-2 space-y-1">
+                <ul className="-mx-2 space-y-1">
                   {navigation.map((item) => (
                     <li key={item.name}>
                       <a
@@ -215,9 +215,8 @@ export default function About() {
           </nav>
         </div>
       </div>
-
-      <div className="lg:pl-72 bg-gray-800">
-        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4  px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+      <div className=" bg-gray-800 overflow-hidden bg-gradient-to-b from-gray-900/20 ">
+        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4  px-4 sm:gap-x-6 sm:px-6 lg:px-8">
           <button
             type="button"
             onClick={() => setSidebarOpen(true)}
@@ -229,7 +228,6 @@ export default function About() {
 
           {/* Separator */}
           {/*<div aria-hidden="true" className="h-6 w-px bg-gray-900/10 lg:hidden" />*/}
-
           <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 ">
             <div className="flex items-center gap-x-4 lg:gap-x-6">
               {/* Separator */}
@@ -237,36 +235,41 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="bg-gray-800">
+      </div>
+      <div className="lg:pl-72 bg-gray-800 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-gray-900/20 pt-14">
+        <div>
           <main className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8">
-              <ul className="">
-                <li className="font-semibold text-3xl text-gray-200">
-                  Hi there! I'm Marc.
-                </li>
-                <li className="flex justify-between gap-x-6 py-5 mt-4 mb-20">
-                  <p className="text-gray-200">
-                    Nice to meet you! I'm a software developer that's passionate
-                    about designing and developing usable working solutions for
-                    use by clients. I have experience working on Microservices
-                    that are both scalable and quickly deployable. I have worked
-                    in the cloud for some time and have worked on utilizing AWS
-                    services such as S3, ECS, EC2 and Fargate. I have also
-                    worked on the front end using React and Vue to create a
-                    seamless user experience. Currently I'm working at Capital
-                    One as a Senior Software Engineer fulfilling their mission
-                    of changing banking for good. My main languages are Java and
-                    Python{" "}
-                  </p>
-                </li>
-              </ul>
-              <div>
-                <p className="text-xs/6 text-gray-400">
-                  Developed in Visual Studio Code. Built with React.js and
-                  Tailwind.css components. Delivered by Netlify, that offers
-                  hosting of static sites for free. Code is available on GitHub.
-                </p>
+            <div className="">
+              <div
+                aria-hidden="true"
+                className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-gray-800 shadow-xl shadow-gray-600/10 ring-1 ring-gray-800 sm:-mr-80 lg:-mr-96"
+              />
+              <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
+                  {/* <h1 class="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">We’re changing the way people connect</h1> */}
+                  <h1 className="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-200 sm:text-7xl lg:col-span-2 xl:col-auto">
+                    About Me..
+                  </h1>
+                  <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
+                    <p className="text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
+                      Pleasure to meet you! I'm a Software Developer trying to
+                      find their place in the world. Currently my hobbies
+                      consist of gymming, playing the occasional video game and
+                      traveling. I love the video game series Pikmin as well as
+                      Legend of Zelda and have found myself wanting to explore
+                      more of the world after the pandemic. If what I have shown
+                      interests you, I hope that we are able to work together in
+                      the future!
+                    </p>
+                  </div>
+                  <img
+                    alt=""
+                    src="https://marcd-developer.github.io/images/GPAD0634.JPG"
+                    className="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+                  />
+                </div>
               </div>
+              <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-gray-800 sm:h-32" />
             </div>
           </main>
         </div>
