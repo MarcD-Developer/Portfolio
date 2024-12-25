@@ -254,11 +254,11 @@ export default function Home() {
                     that are both scalable and quickly deployable. I have worked
                     in the cloud for some time and have worked on utilizing AWS
                     services such as S3, ECS, EC2 and Fargate. I have also
-                    worked on the front end using React and Vue to create a
-                    seamless user experience. Currently I'm working at Capital
-                    One as a Senior Software Engineer fulfilling their mission
-                    of changing banking for good. My main languages are Java and
-                    Python{" "}
+                    worked on the front end using frameworks such as React and
+                    Vue to create a seamless user experience. Currently I'm
+                    working at Capital One as a Senior Software Engineer
+                    fulfilling their mission of changing banking for good. My
+                    main languages are Java and Python{" "}
                   </p>
                 </li>
                 <li className="font-semibold text-3xl text-gray-300 mb-8">
@@ -293,6 +293,16 @@ export default function Home() {
                         </li>
                         <li class="mr-1.5 mt-2">
                           <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            ECS/EC2/Fargate
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            S3
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
                             PostgresSQL
                           </div>
                         </li>
@@ -316,6 +326,16 @@ export default function Home() {
                             Kafka
                           </div>
                         </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            Data Lakes
+                          </div>
+                        </li>
+                        <li class="mr-1.5 mt-2">
+                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                            Snowflake
+                          </div>
+                        </li>
                       </ul>
                     </div>
 
@@ -327,9 +347,12 @@ export default function Home() {
                         building and maintaining RESTful APIs using Java Spring
                         Boot, seamlessly integrating microservices across
                         distributed systems while utilizing Jenkins to ensure
-                        streamlined CI/CD workflows. Crafted responsive user
-                        interfaces via React and Vue while also using
-                        PostgresSQL databases via AWS RDS for high availability.
+                        streamlined CI/CD workflows. Streamed data to data lakes
+                        through Capital One's OneLake. Developed, maintained,
+                        obtained and analyzed data via Snowflake to properly
+                        handle correct responses to clients. Responsible for
+                        handling the reliability of Capital One's RDS instances
+                        and ensuring that the data is always available.
                       </p>
                     </li>
                   </a>
